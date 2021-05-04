@@ -1,24 +1,5 @@
-# README
+# Parcialito Progra III 2021
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Casi todo fue copiado del repositorio del profesor.
+Y creo que faltan algunas funciones.
+Más que eso, funciona todo.
