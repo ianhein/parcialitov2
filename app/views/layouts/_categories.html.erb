@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h4>Recetas por <strong>Categoría</strong></h4>
+
+  <div class="btn-group">
+    <% Category.all.each do |cat| %>
+      <%= link_to cat.name, recipes_url(category: cat.id), class: "btn btn-primary"  %>
+    <% end %>
+  </div>
+</div>

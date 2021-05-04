@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @recipe.image_url, class: 'img-fluid' %>
+
+<br><br>
+
+<h1><%= @recipe.name %></h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <strong>Featured:</strong>
+  <%= @recipe.featured %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <strong>Steps:</strong>
+  <%= @recipe.steps %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @recipe.category.name %>
+</p>
+
+<p>
+  <strong>Recipe type:</strong>
+  <%= @recipe.recipe_type.name %>
+</p>
+
+<div class="alert alert-info">
+  <p>
+    Receta enviada el: <strong> <%= @recipe.submit_date %> </strong> por
+    <strong><%= link_to (@recipe.author.last_name + ", " +@recipe.author.first_name), @recipe.author, class: "alert-link" %></strong>
+  </p>
+</div>
+
+<hr>
+
+<h3>Otras recetas de: <%= @recipe.category.name %> </h3>
+<% @recipe.category.recipes.each do |related_recipe| %>
+  <li> <%= link_to related_recipe.name, related_recipe %> </li>
+<% end %>
+<br>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: 'btn btn-sm btn-secondary' %> &nbsp;
+<%= link_to 'Back', recipes_path, class: 'btn btn-sm btn-primary' %>

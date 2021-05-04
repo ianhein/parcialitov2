@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe_type.description %>
+</p>
+
+<%= link_to 'Edit', edit_recipe_type_path(@recipe_type), class: 'btn btn-sm btn-secondary'%> &nbsp; 
+<%= link_to 'Back', recipe_types_path, class: 'btn btn-sm btn-primary' %>

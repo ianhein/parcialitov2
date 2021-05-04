@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Featured</th>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Steps</th>
+      <th scope="col">Submit date</th>
+      <th scope="col">Image url</th>
+      <th scope="col">Category</th>
+      <th scope="col">Recipe type</th>
+      <!--<th scope="col">Author</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <%= recipe.name %><br>
+          <strong><small>Por: <%= recipe.author.last_name %>,<%= recipe.author.first_name %></small></strong>
+        </td>
+        <td><%= recipe.description %></td>
+        <td><%= recipe.featured %></td>
+        <td><%= recipe.ingredients %></td>
+        <td><%= recipe.steps %></td>
+        <td><%= recipe.submit_date %></td>
+        <td><%= image_tag recipe.image_url, class: 'img-thumbnail'%></td>
+        <td><%= recipe.category.name %></td>
+        <td><%= recipe.recipe_type.name %></td>
+        <td><%= link_to 'Show', recipe, class: 'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe), class: 'btn btn-sm btn-secondary' %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path, class: 'btn btn-xl btn-success'%>

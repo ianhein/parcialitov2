@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  birthdate: 2021-05-03 22:05:26
+  nationality: MyString
+  category: one
+
+two:
+  first_name: MyString
+  last_name: MyString
+  birthdate: 2021-05-03 22:05:26
+  nationality: MyString
+  category: two

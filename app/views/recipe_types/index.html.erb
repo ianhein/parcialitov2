@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recipe Types</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_types.each do |recipe_type| %>
+      <tr>
+        <td><%= recipe_type.name %></td>
+        <td><%= recipe_type.description %></td>
+        <td><%= link_to 'Show', recipe_type, class: 'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_recipe_type_path(recipe_type), class: 'btn btn-sm btn-secondary' %></td>
+        <td><%= link_to 'Destroy', recipe_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recipe Type', new_recipe_type_path, class: 'btn btn-xl btn-success' %>
